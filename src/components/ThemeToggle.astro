@@ -1,0 +1,106 @@
+---
+---
+
+<div class="theme-toggle" id="themeToggle">
+    <i class="fas fa-sun"></i>
+    <i class="fas fa-moon"></i>
+</div>
+
+<script>
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    // Theme toggle functionality
+    themeToggle?.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        const isLight = body.classList.contains('light-mode');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        
+        // Dispatch custom event for other components to listen to changes if needed
+        window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: isLight ? 'light' : 'dark' } }));
+
+        // Update mode buttons if they exist (handled in ColorPalette, but good to trigger updates)
+        updateModeExternal();
+    });
+
+    function updateModeExternal() {
+         const isLight = body.classList.contains('light-mode');
+         const modeButtons = document.querySelectorAll('.mode-btn');
+         const darkModeColors = document.getElementById('darkModeColors');
+         const lightModeColors = document.getElementById('lightModeColors');
+
+         if(darkModeColors && lightModeColors) {
+            if (isLight) {
+                darkModeColors.style.display = 'none';
+                lightModeColors.style.display = 'grid';
+                modeButtons.forEach(btn => btn.classList.remove('active'));
+                const btn = document.querySelector('.mode-btn[data-mode="light"]');
+                if(btn) btn.classList.add('active');
+            } else {
+                darkModeColors.style.display = 'grid';
+                lightModeColors.style.display = 'none';
+                modeButtons.forEach(btn => btn.classList.remove('active'));
+                 const btn = document.querySelector('.mode-btn[data-mode="dark"]');
+                if(btn) btn.classList.add('active');
+            }
+         }
+    }
+</script>
+
+<style>
+    /* Theme Toggle Button */
+    .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        color: var(--primary-color);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        transition: all var(--transition-speed);
+        box-shadow: 0 2px 10px var(--shadow-color);
+    }
+
+    .theme-toggle:hover {
+        transform: rotate(15deg);
+        box-shadow: 0 4px 15px var(--shadow-color);
+    }
+
+    .theme-toggle i {
+        transition: transform var(--transition-speed);
+    }
+
+    :global(.light-mode) .theme-toggle i.fa-sun {
+        display: none;
+    }
+
+    :global(.light-mode) .theme-toggle i.fa-moon {
+        display: block;
+    }
+
+    :global(:not(.light-mode)) .theme-toggle i.fa-sun {
+        display: block;
+    }
+
+    :global(:not(.light-mode)) .theme-toggle i.fa-moon {
+        display: none;
+    }
+    
+    @media (max-width: 768px) {
+        .theme-toggle {
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            font-size: 1.1rem;
+        }
+    }
+</style>

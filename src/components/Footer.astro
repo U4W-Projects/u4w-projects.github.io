@@ -1,0 +1,161 @@
+---
+---
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">U4W STATION</div>
+                <p class="footer-tagline">
+                    UNIVERSE IV WORKSTATION - Where quantum technology meets the cosmic frontier. 
+                    We build tomorrow from the quantum foam of today's innovations.
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fas fa-satellite"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#about">About Station</a></li>
+                    <li><a href="#services">Projects</a></li>
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#color-palette">Color System</a></li>
+                    <li><a href="#join">Join Crew</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Quantum Archives</h4>
+                <ul>
+                    <li><a href="#">Research Papers</a></li>
+                    <li><a href="#">Quantum Logs</a></li>
+                    <li><a href="#">Tech Manifesto</a></li>
+                    <li><a href="#">Open Source</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 U4W - Universe IV Workstation. All transmissions reserved. 
+            Forged with <i class="fas fa-heart"></i> in the quantum fabric of spacetime.
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background-color: var(--footer-bg);
+        color: white;
+        padding: 70px 0 30px;
+        position: relative;
+        border-top: 1px solid var(--border-color);
+        transition: all var(--transition-speed);
+    }
+
+    footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary-color), var(--accent-2));
+        transition: background var(--transition-speed);
+    }
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 50px;
+        margin-bottom: 50px;
+    }
+    
+    .footer-logo {
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        color: white;
+    }
+    
+    .footer-tagline {
+        font-size: 1rem;
+        opacity: 0.9;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+    
+    .footer-links h4 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        color: white;
+        font-weight: 600;
+    }
+    
+    .footer-links ul {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s;
+        font-size: 0.95rem;
+    }
+    
+    .footer-links a:hover {
+        color: white;
+        padding-left: 5px;
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+    }
+    
+    .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(30, 41, 59, 0.8);
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s;
+        border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .social-icons a:hover {
+        background-color: var(--accent-1);
+        transform: translateY(-3px);
+        border-color: var(--accent-1);
+    }
+    
+    .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+        opacity: 0.7;
+    }
+
+    .copyright i {
+        color: var(--accent-1);
+        margin: 0 5px;
+    }
+
+    @media (max-width: 992px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+</style>

@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Mission from '../components/Mission.astro';
+import ColorPalette from '../components/ColorPalette.astro';
+import Join from '../components/Join.astro';
+import Footer from '../components/Footer.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+---
+
+<Layout title="U4W - Universe IV Workstation">
+	<ThemeToggle />
+	<Header />
+	<main>
+		<Hero />
+		<About />
+		<Services />
+		<Mission />
+		<ColorPalette />
+		<Join />
+	</main>
+	<Footer />
+</Layout>

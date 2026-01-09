@@ -1,0 +1,136 @@
+---
+---
+
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <div class="logo-icon">U4W</div>
+                <div class="logo-text">UNIVERSE IV WORKSTATION</div>
+            </a>
+            <div class="nav-links">
+                <a href="#about">About Us</a>
+                <a href="#services">Research</a>
+                <a href="#mission">Mission</a>
+                <a href="#color-palette">Color System</a>
+                <a href="#join">Join</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    // Add scroll effect to navbar
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('.header');
+        if (window.scrollY > 50) {
+            nav?.classList.add('scrolled');
+        } else {
+            nav?.classList.remove('scrolled');
+        }
+    });
+</script>
+
+<style>
+    /* Header */
+    .header {
+        background-color: var(--nav-bg);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 1px 3px var(--shadow-color);
+        transition: all var(--transition-speed);
+    }
+
+    .header.scrolled {
+        background-color: var(--nav-bg-scrolled);
+        box-shadow: 0 2px 10px var(--shadow-color);
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+    
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+    }
+    
+    .logo-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, var(--primary-color), #1D4ED8);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .logo-icon:hover {
+        transform: rotate(5deg);
+    }
+
+    :global(:not(.light-mode)) .logo-icon {
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    }
+    
+    .logo-text {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--text-primary);
+        letter-spacing: 1px;
+        transition: color var(--transition-speed);
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 40px;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-weight: 500;
+        transition: all 0.3s;
+        position: relative;
+        padding: 5px 0;
+        font-size: 15px;
+    }
+    
+    .nav-links a:hover {
+        color: var(--primary-color);
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+        }
+    }
+</style>

@@ -1,0 +1,134 @@
+---
+---
+<section id="about" class="about-section">
+    <div class="container">
+        <h2 class="section-title">WHO WE ARE</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Elite R&D Team</h3>
+                <p>
+                    U4W is an elite research and development team dedicated to the fusion of software and hardware innovation. 
+                    From embedded systems to AI-powered platforms, we transform bold ideas into reality.
+                </p>
+                <p>
+                    We bring together the most creative minds who aren't afraid to challenge the status quo and push the boundaries of what's 
+                    possible in technology. Each member of our crew is a specialist in their field.
+                </p>
+            </div>
+            <div class="about-features">
+                <div class="feature">
+                    <i class="fas fa-microchip"></i>
+                    <h4>Quantum Engineers</h4>
+                    <p>Experts in quantum computing systems and nano-scale hardware integration.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-code"></i>
+                    <h4>Cosmic Developers</h4>
+                    <p>Building intelligent software platforms and AI systems for space applications.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-flask"></i>
+                    <h4>Stellar Researchers</h4>
+                    <p>Exploring new technologies and developing breakthrough space prototypes.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-cloud"></i>
+                    <h4>Nebula Architects</h4>
+                    <p>Designing scalable quantum cloud systems for interstellar communication.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+    
+    .about-text h3 {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        font-weight: 600;
+        transition: color var(--transition-speed);
+    }
+    
+    .about-text p {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+        margin-bottom: 25px;
+        line-height: 1.7;
+        transition: color var(--transition-speed);
+    }
+    
+    .about-features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .feature {
+        background-color: var(--card-bg);
+        padding: 25px;
+        border-radius: 10px;
+        transition: all 0.3s;
+        border: 1px solid var(--border-color);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
+    }
+    
+    .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px var(--shadow-color);
+        border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .feature::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background-color: var(--primary-color);
+    }
+    
+    .feature i {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+    }
+    
+    .feature h4 {
+        font-size: 1.2rem;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+        font-weight: 600;
+        transition: color var(--transition-speed);
+    }
+    
+    .feature p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        transition: color var(--transition-speed);
+    }
+
+    @media (max-width: 992px) {
+        .about-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-features {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
