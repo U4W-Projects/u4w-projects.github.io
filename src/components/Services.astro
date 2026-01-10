@@ -1,10 +1,13 @@
 ---
+import { useTranslations } from "../i18n/utils";
 
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="services" class="services-section">
     <div class="container">
-        <h2 class="section-title">OUR DOMAINS</h2>
+        <h2 class="section-title">{t("services.title")}</h2>
         <div class="services-grid">
             <div class="service">
                 <div class="project-image">
@@ -15,10 +18,7 @@
                     />
                 </div>
                 <h3>FloodCAM-II</h3>
-                <p>
-                    A comprehensive platform for weather, disaster, wind, and
-                    wave monitoring, offering early warnings to mitigate risks.
-                </p>
+                <p>{t("services.floodcam")}</p>
             </div>
             <div class="service">
                 <div class="project-image">
@@ -29,11 +29,7 @@
                     />
                 </div>
                 <h3>Nereidro</h3>
-                <p>
-                    Hydrological basin modeling and simulation application
-                    integrating traditional hydrology with advanced machine
-                    learning.
-                </p>
+                <p>{t("services.nereidro")}</p>
             </div>
             <div class="service">
                 <div class="project-image">
@@ -44,10 +40,7 @@
                     />
                 </div>
                 <h3>SmartWM</h3>
-                <p>
-                    Intelligent water meter management system for modern utility
-                    monitoring.
-                </p>
+                <p>{t("services.smartwm")}</p>
             </div>
         </div>
     </div>

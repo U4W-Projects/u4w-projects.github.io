@@ -1,39 +1,43 @@
 ---
+import { useTranslations } from "../i18n/utils";
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
+
 <section id="about" class="about-section">
     <div class="container">
-        <h2 class="section-title">WHO WE ARE</h2>
+        <h2 class="section-title">{t("about.title")}</h2>
         <div class="about-content">
             <div class="about-text">
-                <h3>R&D Team</h3>
+                <h3>{t("about.team")}</h3>
                 <p>
-                    Welcome to U4W - a dedicated research and development group where software and hardware converge to solve real world challenges.
+                    {t("about.desc1")}
                 </p>
                 <p>
-                    We specialize in technological solutions for agriculture, irrigation, industry, and community driven projects.
-                    From simple embedded systems to intelligent platforms, our mission is to transform viable ideas into practical products that enhance efficiency and quality of life.
+                    {t("about.desc2")}
                 </p>
             </div>
             <div class="about-features">
                 <div class="feature">
                     <i class="fas fa-microchip"></i>
-                    <h4>Embedded Systems Engineers</h4>
-                    <p>Experts in designing and integrating microcontroller-based hardware and sensors for automation systems.</p>
+                    <h4>{t("about.role1")}</h4>
+                    <p>{t("about.role1.desc")}</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-code"></i>
-                    <h4>Software Solutions Developers</h4>
-                    <p>Building smart management platforms, applications, and practical data-driven solutions.</p>
+                    <h4>{t("about.role2")}</h4>
+                    <p>{t("about.role2.desc")}</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-flask"></i>
-                    <h4>R&D Specialists</h4>
-                    <p>Researching, testing, and developing technology prototypes for agricultural and community applications.</p>
+                    <h4>{t("about.role3")}</h4>
+                    <p>{t("about.role3.desc")}</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-cloud"></i>
-                    <h4>System Architects</h4>
-                    <p>Designing integrated end-to-end, cloud, and IoT systems, ensuring scalability and reliable operation.</p>
+                    <h4>{t("about.role4")}</h4>
+                    <p>{t("about.role4.desc")}</p>
                 </div>
             </div>
         </div>
@@ -47,7 +51,7 @@
         gap: 60px;
         align-items: start;
     }
-    
+
     .about-text h3 {
         font-size: 1.8rem;
         color: var(--primary-color);
@@ -55,7 +59,7 @@
         font-weight: 600;
         transition: color var(--transition-speed);
     }
-    
+
     .about-text p {
         color: var(--text-secondary);
         font-size: 1.05rem;
@@ -63,13 +67,13 @@
         line-height: 1.7;
         transition: color var(--transition-speed);
     }
-    
+
     .about-features {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
-    
+
     .feature {
         background-color: var(--card-bg);
         padding: 25px;
@@ -80,7 +84,7 @@
         overflow: hidden;
         backdrop-filter: blur(5px);
     }
-    
+
     .feature:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 25px var(--shadow-color);
@@ -88,7 +92,7 @@
     }
 
     .feature::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -96,13 +100,13 @@
         height: 100%;
         background-color: var(--primary-color);
     }
-    
+
     .feature i {
         font-size: 1.8rem;
         color: var(--primary-color);
         margin-bottom: 15px;
     }
-    
+
     .feature h4 {
         font-size: 1.2rem;
         color: var(--text-primary);
@@ -110,7 +114,7 @@
         font-weight: 600;
         transition: color var(--transition-speed);
     }
-    
+
     .feature p {
         color: var(--text-secondary);
         font-size: 0.95rem;

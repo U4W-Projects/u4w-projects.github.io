@@ -1,17 +1,29 @@
 ---
+import { useTranslations } from "../i18n/utils";
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const p1 = t("mission.p1.text").replace(
+    "{strong}",
+    `<strong>${t("mission.p1.strong")}</strong>`,
+);
+const p2 = t("mission.p2.text").replace(
+    "{em}",
+    `<em>${t("mission.p2.em")}</em>`,
+);
+const p3 = t("mission.p3.text").replace(
+    "{strong}",
+    `<strong>${t("mission.p3.strong")}</strong>`,
+);
 ---
+
 <section id="mission" class="mission-section">
     <div class="container">
-        <h2 class="section-title">OUR MISSION</h2>
-        <p class="mission-text">
-            To bring <strong>technology to practical fields</strong>, creating integrated hardware and software solutions that address specific challenges in agriculture, irrigation, and community development.
-        </p>
-        <p class="mission-text">
-            We believe the future is built by those who listen to real needs and act with determination. Every line of code, every circuit, and every algorithm serves a single purpose: <em>to enhance efficiency and quality of life</em>.
-        </p>
-        <p class="mission-text">
-            At U4W, we don't just apply technology, we <strong>design it to serve</strong>. From simple automation systems to IoT and smart management platforms, we build practical tools that help people work smarter and develop more sustainably.
-        </p>
+        <h2 class="section-title">{t("mission.title")}</h2>
+        <p class="mission-text" set:html={p1} />
+        <p class="mission-text" set:html={p2} />
+        <p class="mission-text" set:html={p3} />
     </div>
 </section>
 
@@ -20,7 +32,7 @@
         text-align: center;
         position: relative;
     }
-    
+
     .mission-text {
         font-size: 1.2rem;
         max-width: 800px;

@@ -1,22 +1,26 @@
 ---
+import { useTranslations } from "../i18n/utils";
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
+
 <section class="hero">
     <div class="container">
         <div class="hero-tagline">U4W</div>
         <div class="hero-divider"></div>
         <h1>UNIVERSE <span class="hero-highlight">IV</span> WORKSTATION</h1>
         <div class="hero-subtitle">
-            <p>Firm in Mind. Vast in Reach</p>
+            <p>{t("hero.subtitle.1")}</p>
             <p>心は定まり、志は遠く</p>
             <p>心定志遠</p>
         </div>
         <p class="mission-statement">
-            Welcome to U4W – where technology is engineered for the earth and water.
-            We are a hands on team of engineers, agronomists, and developers, building integrated hardware and software solutions
-            that address the real world challenges of agriculture, irrigation, and water resource management. Our work is rooted in the soil,
-            designed for the fields, and dedicated to creating smarter systems for a more sustainable future.
+            {t("hero.mission")}
         </p>
-        <a href="#join" class="cta-button">JOIN THE MISSION <i class="fas fa-arrow-right"></i></a>
+        <a href="#join" class="cta-button"
+            >{t("hero.cta")} <i class="fas fa-arrow-right"></i></a
+        >
     </div>
 </section>
 
@@ -25,19 +29,27 @@
         padding: 180px 0 120px;
         text-align: center;
         position: relative;
-        background: linear-gradient(to bottom, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        background: linear-gradient(
+            to bottom,
+            var(--bg-primary) 0%,
+            var(--bg-secondary) 100%
+        );
         transition: background var(--transition-speed);
     }
 
     .hero-divider {
         width: 100px;
         height: 4px;
-        background: linear-gradient(to right, var(--primary-color), var(--accent-2));
+        background: linear-gradient(
+            to right,
+            var(--primary-color),
+            var(--accent-2)
+        );
         margin: 0 auto 40px;
         border-radius: 2px;
         transition: background var(--transition-speed);
     }
-    
+
     .hero-tagline {
         display: inline-block;
         background-color: rgba(30, 41, 59, 0.7);
@@ -56,7 +68,7 @@
     :global(.light-mode) .hero-tagline {
         background-color: rgba(245, 245, 245, 0.9);
     }
-    
+
     h1 {
         font-size: 3.5rem;
         color: var(--text-primary);
@@ -73,7 +85,7 @@
     }
 
     .hero-highlight::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 5px;
         left: 0;
@@ -84,7 +96,7 @@
         border-radius: 2px;
         transition: background-color var(--transition-speed);
     }
-    
+
     .hero-subtitle {
         font-size: 1.4rem;
         color: var(--accent-2);
@@ -95,7 +107,7 @@
         font-weight: 400;
         transition: color var(--transition-speed);
     }
-    
+
     .mission-statement {
         font-size: 1.15rem;
         max-width: 700px;

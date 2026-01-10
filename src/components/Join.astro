@@ -1,17 +1,22 @@
 ---
+import { useTranslations } from "../i18n/utils";
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
+
 <section id="join" class="join-section">
     <div class="container">
-        <h2 class="section-title">JOIN THE MISSION</h2>
-        <div class="join-content">            
+        <h2 class="section-title">{t("join.title")}</h2>
+        <div class="join-content">
             <div class="quote">
-                "The universe is not only stranger than we imagine, it is stranger than we can imagine. At U4W, we're building the tools to expand that imagination."
+                {t("join.quote")}
             </div>
-            
+
             <div class="contact-info">
-                <h3>CONTACT NOW</h3>
+                <h3>{t("join.contact")}</h3>
                 <p class="contact-item">
-                    <i class="fas fa-envelope"></i> 
+                    <i class="fas fa-envelope"></i>
                     baonamdts@gmail.com
                 </p>
             </div>
@@ -23,22 +28,26 @@
     .join-section {
         text-align: center;
         position: relative;
-        background: linear-gradient(to bottom, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        background: linear-gradient(
+            to bottom,
+            var(--bg-primary) 0%,
+            var(--bg-secondary) 100%
+        );
         transition: background var(--transition-speed);
     }
-    
+
     .join-content {
         max-width: 800px;
         margin: 0 auto;
     }
-    
+
     .join-content p {
         font-size: 1.2rem;
         margin-bottom: 40px;
         color: var(--text-secondary);
         transition: color var(--transition-speed);
     }
-    
+
     .quote {
         font-style: italic;
         font-size: 1.4rem;
@@ -51,7 +60,7 @@
         line-height: 1.6;
         transition: color var(--transition-speed);
     }
-    
+
     .contact-info {
         background-color: var(--card-bg);
         padding: 35px;
@@ -61,7 +70,7 @@
         backdrop-filter: blur(5px);
         transition: all var(--transition-speed);
     }
-    
+
     .contact-info h3 {
         color: var(--primary-color);
         margin-bottom: 20px;
@@ -71,7 +80,7 @@
     }
 
     .contact-item {
-        margin-bottom: 15px; 
+        margin-bottom: 15px;
         font-size: 1.1rem;
         display: flex;
         justify-content: center;
