@@ -9,7 +9,10 @@ const t = useTranslations(lang);
 <header id="main-header">
     <div class="container header-container">
         <div class="logo">
-            <a href="#">U4W</a>
+            <a href="#">
+                <img src="/logo.png" alt="U4W Logo" />
+                <span>UNIVERSE IV WORKSTATION</span>
+            </a>
         </div>
 
         <div class="header-controls">
@@ -105,12 +108,29 @@ const t = useTranslations(lang);
     }
 
     .logo a {
-        font-size: 24px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 12px;
+    }
+
+    .logo img {
+        height: 40px;
+        width: auto;
+        border-radius: 8px; /* Bo 1 tý viền */
+        transition: all 0.3s ease;
+    }
+
+    .logo:hover img {
+        box-shadow: 0 0 15px var(--primary-color); /* Phát sáng */
+        transform: rotate(-5deg) scale(1.05); /* Nghiêng 1 tý */
+    }
+
+    .logo span {
+        font-size: 20px;
         font-weight: 800;
         color: var(--primary-color);
-        text-decoration: none;
-        letter-spacing: 2px;
-        transition: color var(--transition-speed);
+        letter-spacing: 1px;
     }
 
     nav ul {
